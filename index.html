@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --primary-color: #6a0d92;
+            --secondary-color: #b950e7;
+        }
+       .page {
+        width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    } 
+    .login-form, .register-form {
+        text-align: center;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #666;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        width: 90%;
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        height: 40px;
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: var(--primary-color);
+    }
+
+    p {
+        margin-top: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--primary-color);
+    }
+
+    a:hover {
+        color: var(--primary-color);
+    }
+    </style>
+</head>
+<body>
+    <main>
+        
+    <div id="login-page" class="page" style="text-align: end;">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Login">
+            </form>
+            <p>Don't have an account? <a href="#" data-link="account-page" onclick="linkPage( this );">Sign up</a></p>
+
+        </div>
+    </div>
+  
+    
+    <div id="front-page" class="page" style="display: none;"></div>
+    <div id="account-page" class="page" style="display: none;">
+        <div class="register-form">
+            <h2>Register</h2>
+            <form>
+                <div class="form-group">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                </div>
+                <input type="submit" value="Register">
+            </form>
+            <p>Already have an account? <a href="#" data-link="login-page" onclick="linkPage( this );">Login</a></p>
+        </div>
+    </div>
+    <div id="switch-account-page" class="page" style="display: none;"></div>
+    <div id="loan-page" class="page" style="display: none;"></div>
+    <div id="invest-page" class="page" style="display: none;"></div>
+    <div id="reward-zone-page" class="page" style="display: none;"></div>
+    <div id="total-balance-page" class="page" style="display: none;"></div>
+    <div id="settings-page" class="page" style="display: none;"></div>
+    <div id="my-profile-page" class="page" style="display: none;"></div>
+    </main>
+    <script>
+        function linkPage(el){
+            if( ! el || ! el.tagName ) return;
+
+            let id = el.getAttribute('data-link');
+            let page = document.getElementById(id);
+
+            if( ! page ) return;
+
+            let pages = document.getElementsByClassName('page');
+            let currentPage = null;
+
+            for( let x = 0; x < pages.length; x++ ){
+                currentPage     = pages[x];
+
+                if( currentPage.style.display != 'none' )
+                break;
+            }
+
+            currentPage.style.display   = "none";
+            page.style.display          = "block";
+        }
+    </script>
+</body>
+</html>

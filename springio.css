@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav{
+    display: flex;
+    background-color: coral;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-left{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.nav-left img{
+    width: 150px;
+}
+.nav-left div{
+    color: #aad586;
+}
+.dropone-div{
+    display: flex;
+    gap: 8px;
+}
+.dropone-drop{
+    background-color: whitesmoke;
+    position: absolute;
+    top: 30px;
+    width: 250px;
+    border-radius: 10px;
+    height: 300px;
+    padding: 20px;
+    display: none;
+}
+.dropone-drop div{
+    margin: 10px 0 0 0;
+}
+.dropone-drop div:hover{
+    color: #aad586;
+}
+/*.dropdown1{
+    position: relative;
+}*/
+.dropdown:hover .dropone-drop{
+    display: block;
+}
+.nav-right{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 25px;
+    display: none;
+}
+.second-drop{
+    background-color: transparent;
+    border: none;
+}
+.dropdown1{
+    position: relative;
+}
+.dropdown1:hover .dropone-drop{
+    display: block;
+}   
+.second-drop{
+    background-color: transparent;
+    border: none;
+    
+}
+
+.dropones-div{
+    display: flex;
+    gap: 8px;
+}
+.dropones-drop{
+    background-color: whitesmoke;
+    /*position: absolute;
+    top: 30px;
+    width: 250px;*/
+    border-radius: 10px;
+    height: 300px;
+    padding: 20px;
+    display: none;
+}
+.dropones-drop div{
+    margin: 10px 0 0 0;
+}
+.dropones-drop div:hover{
+    color: #aad586;
+}
+.drop-btn{
+    background-color: transparent;
+    border: none;
+
+}
+#bars{
+    display: none;
+}
+.dropup{
+    background-color: whitesmoke;
+    width: 100px;
+    padding: 25px;
+    height: 50vh;
+    display: none;
+}
+.second-drop:focus .dropup{
+    display: block;
+    top: 0;
+    transition: all 2s linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media Query */
+
+@media (max-width:1029.33px) {
+    
+}
+
+@media (max-width:1023.33px) {
+    
+}
